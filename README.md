@@ -1,5 +1,5 @@
 # Main-character
-操作キャラ（正方形）のプログラム
+操作するキャラにインポートして使います
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
