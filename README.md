@@ -6,47 +6,123 @@ using UnityEngine;
 
 public class MainCharacter : MonoBehaviour
 {
-    public Camera MainCamera;
-    private Vector3 lastMousePosition;
-    private Vector3 newAngle = new Vector3(0, 0, 0);
-    int topx,topz;
-    int lenthx,lenthz;
-
     void Update()
     {
+        //オブジェクトの座標を取得します
+        Quaternion quaternion = this.transform.rotation;
+        Debug.Log(quaternion);
+        float y = quaternion.eulerAngles.y;
+
         //前に移動します
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += new Vector3(0, 0, 6 * Time.deltaTime);
+            //316°～ 45°の角度の時に進む方向
+            if (316 <= y && y <= 360 || y <= 45)
+            {
+                transform.position += new Vector3(0, 0, 6 * Time.deltaTime);
+            }
+
+            //46°～ 135°の角度の時に進む方向
+            else if (46 <= y && y <= 135)
+            {
+                transform.position += new Vector3(6 * Time.deltaTime, 0, 0);
+            }
+
+            //136°～ 225°の角度の時に進む方向
+            else if (136 <= y && y <= 225)
+            {
+                transform.position += new Vector3(0, 0, -6 * Time.deltaTime);
+            }
+
+            //226°～ 315°の角度の時に進む方向
+            else if (226 <= y && y <= 315)
+            {
+                transform.position += new Vector3(-6 * Time.deltaTime, 0, 0);
+            }
         }
+
         //後に移動します
         if (Input.GetKey(KeyCode.X))
         {
-            transform.position += new Vector3(0, 0, -6 * Time.deltaTime);
+            //316°～ 45°の角度の時に進む方向
+            if (316 <= y && y <= 360 || y <= 45)
+            {
+                transform.position += new Vector3(0, 0, -6 * Time.deltaTime);
+            }
+
+            //46°～ 135°の角度の時に進む方向
+            else if (46 <= y && y <= 135)
+            {
+                transform.position += new Vector3(-6 * Time.deltaTime, 0, 0);
+            }
+
+            //136°～ 225°の角度の時に進む方向
+            else if (136 <= y && y <= 225)
+            {
+                transform.position += new Vector3(0, 0, 6 * Time.deltaTime);
+            }
+
+            //226°～ 315°の角度の時に進む方向
+            else if (226 <= y && y <= 315)
+            {
+                transform.position += new Vector3(6 * Time.deltaTime, 0, 0);
+            }
         }
+
         //右に移動します
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += new Vector3(6 * Time.deltaTime, 0, 0);
+            //316°～ 45°の角度の時に進む方向
+            if (316 <= y && y <= 360 || y <= 45)
+            {
+                transform.position += new Vector3(6 * Time.deltaTime, 0, 0);
+            }
+
+            //46°～ 135°の角度の時に進む方向
+            else if (46 <= y && y <= 135)
+            {
+                transform.position += new Vector3(0, 0, -6 * Time.deltaTime);
+            }
+
+            //136°～ 225°の角度の時に進む方向
+            else if (136 <= y && y <= 225)
+            {
+                transform.position += new Vector3(-6 * Time.deltaTime, 0, 0);
+            }
+
+            //226°～ 315°の角度の時に進む方向
+            else if (226 <= y && y <= 315)
+            {
+                transform.position += new Vector3(0, 0, 6 * Time.deltaTime);
+            }
         }
+
         //左に移動します
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position += new Vector3(-6 * Time.deltaTime, 0, 0);
-        }
-        //上に移動します
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.position += new Vector3(0, 6 * Time.deltaTime, 0);
-        }
+            //316°～ 45°の角度の時に進む方向
+            if (316 <= y && y <= 360 || y <= 45)
+            {
+                transform.position += new Vector3(-6 * Time.deltaTime, 0, 0);
+            }
 
-        //移動する方向にあらかじめ値を代入しているため、カメラの向き変更に対応できていないのでできる方お願いします
-        
-        /*Vector3 pos = transform.position;
-        pos.z -= 0f;
-        pos.y += 2f;
-        pos.x += 0f;
-        GameObject camera = GameObject.Find("Camera0");
-        camera.transform.position = pos;*/
+            //46°～ 135°の角度の時に進む方向
+            else if (46 <= y && y <= 135)
+            {
+                transform.position += new Vector3(0, 0, 6 * Time.deltaTime);
+            }
+
+            //136°～ 225°の角度の時に進む方向
+            else if (136 <= y && y <= 225)
+            {
+                transform.position += new Vector3(6 * Time.deltaTime, 0, 0);
+            }
+
+            //226°～ 315°の角度の時に進む方向
+            else if (226 <= y && y <= 315)
+            {
+                transform.position += new Vector3(0, 0, -6 * Time.deltaTime);
+            }
+        }
     }
 }
