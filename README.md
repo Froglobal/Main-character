@@ -1,5 +1,6 @@
 # Main-character
 操作するキャラにインポートして使います
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
