@@ -9,7 +9,7 @@ public class MainCharacter : MonoBehaviour
 {
     void Update()
     {
-        //オブジェクトの座標を取得します
+        /*オブジェクトの座標を取得します*/
         Quaternion quaternion = this.transform.rotation;
         Debug.Log(quaternion);
         float y = quaternion.eulerAngles.y;
